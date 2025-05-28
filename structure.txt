@@ -1,0 +1,41 @@
+|- NAGA
+    |- .vscode
+        |- settings.jsosn
+        |- tasks.jsosn
+    |- build
+        |- naga.exe
+    |- inlude
+        |- naga.h
+    |- junk_drawer (for pesky .obj files)
+    |- resources (empty as of now, will hold pictures, MP3s, etc.)
+    |- src
+        |- audio
+            |- fx.* (as in fx.cpp and fx.h)
+            |- music.*
+        |- commands
+            |- directories.*
+            |- files.*
+            |- go.* (launches apps)
+            |- help.*
+            |- no.* (closes apps)
+            |- secret.*
+        |- config
+            |- menus
+                |- config_menu.*
+                |- display_menu.*
+                |- sound_menu.*
+            |-config.*
+        |- input
+            |- command_loop.*
+            |- command.h (for Command struct "cmd") 
+            |- parser.*
+            |- executor.*
+        |- utils
+            |- paths.*
+            |- string_utils.*
+        |- visuals
+            |- display.*
+            |- theme.*
+        |- main.cpp
+    |- build.bat
+    |- structure.txt (this file contains the project's "structure tree")

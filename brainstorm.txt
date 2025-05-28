@@ -1,0 +1,7 @@
+--Tiling functionality
+
+A command like "goChrome (website) 1/8" opense chrome window with URL in that tile space
+
+--GUI
+.Display CPU, RAM, and storage usage
+.Display CPU type, RAM type, Storage type, resolution, Laptop name?, 

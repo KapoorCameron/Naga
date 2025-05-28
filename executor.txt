@@ -1,0 +1,65 @@
+#include "executor.h"
+#include "../commands/help.h"
+#include "../commands/directories.h"
+#include "../commands/files.h"
+#include <iostream>
+
+void executeCommand(const Command& cmd)
+{
+    if (!cmd._is_valid)
+    {
+        std::cerr << "No command entered.\n";
+        return;
+    }
+
+    // Match command name to its implementation
+    if (cmd._name == "help")
+    {
+        showHelp();
+    }
+    else if (cmd._name == "md")
+    {
+        if (cmd._args.size() >= 2)
+        {
+            makeDirectory(cmd._args[0], cmd._args[1], false);
+        }
+        else
+        {
+            std::cerr << "Usage: md <location> \"Folder Name\"\n";
+        }
+    }
+    else if (cmd._name == "md" && cmd._args[0] == "o")  // Optional shortcut: md o ...
+    {
+        if (cmd._args.size() >= 3)
+        {
+            makeDirectory(cmd._args[1], cmd._args[2], true);
+        }
+        else
+        {
+            std::cerr << "Usage: md o <location> \"Folder Name\"\n";
+        }
+    }
+    else if (cmd._name == "newfile")
+    {
+        bool openAfter = (cmd._args[0] == "o");
+
+        if (openAfter && cmd._args.size() >= 4)
+        {
+            makeFile(cmd._args[1], cmd._args[2], cmd._args[3], true);
+        }
+        else if (!openAfter && cmd._args.size() >= 3)
+        {
+            makeFile(cmd._args[0], cmd._args[1], cmd._args[2], false);
+        }
+        else
+        {
+            std::cerr << "Usage:\n";
+            std::cerr << "  newfile <location> \"Folder Name\" \"file.txt\"\n";
+            std::cerr << "  newfile o <location> \"Folder Name\" \"file.txt\"\n";
+        }
+    }
+    else
+    {
+        std::cerr << "Unknown command: " << cmd._name << "\n";
+    }
+}

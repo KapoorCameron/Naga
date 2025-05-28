@@ -1,0 +1,21 @@
+void parseInput(const std::string& input) {
+    if (input.rfind("md o ", 0) == 0) {
+        // call makeDirectory() with openAfter = true
+    } else if (input.rfind("md ", 0) == 0) {
+        // call makeDirectory() without openAfter
+    } else if (input.rfind("mf ", 0) == 0) {
+        // call createFile()
+    } else if (input.rfind("go ", 0) == 0) {
+        // call launchApp()
+    } else if (input.rfind("no ", 0) == 0) {
+        // call quitApp()
+    } else if (input == "fx") {
+        toggleFx();
+    } else if (input == "play") {
+        playPlaylist("default");
+    } else if (input.rfind("music ", 0) == 0) {
+        parseMusicCommand(input);
+    } else {
+        std::cerr << "Unknown command. Type 'help'.\n";
+    }
+}
