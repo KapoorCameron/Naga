@@ -15,6 +15,8 @@
 
 void runCommandLoop() 
 {
+    // test
+
     std::string cwd = resolvePath("cwd").string();
 
     std::string input;
