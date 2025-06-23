@@ -1,6 +1,16 @@
---Tiling functionality
+## COMMANDS
 
-A command like "goChrome (website) 1/8" opense chrome window with URL in that tile space
+"die" -> shuts down computer, w/ "Y or N" confirmation prompt.
+
+"vol xxx" -> sets volume to given percent/level.
+
+"specs" -> lists computer specs
+
+## TILING FUNCTIONALITY
+
+A command like "gochrome (website) 1/8" opense chrome window with URL in that tile space.
+
+Just "...1/4" will make tile occupy 2nd quadrant of screen (think unit circle)while  "...1/4v" would make tile vertically 1/4th.
 
 --GUI
 .Display CPU, RAM, and storage usage
